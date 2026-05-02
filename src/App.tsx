@@ -10,6 +10,9 @@ import Gouter from "./pages/voies/Gouter";
 import TroisMonts from "./pages/voies/TroisMonts";
 import Gonella from "./pages/voies/Gonella";
 import Securite from "./pages/Securite";
+import GuidesDirectory from "./pages/GuidesDirectory";
+import GuideProfile from "./pages/GuideProfile";
+import History from "./pages/History";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
               <Route path="/voies/3-monts" element={<TroisMonts />} />
               <Route path="/voies/gonella" element={<Gonella />} />
               <Route path="/securite" element={<Securite />} />
+              <Route path="/guides" element={<GuidesDirectory />} />
+              <Route path="/guides/:slug" element={<GuideProfile />} />
+              <Route path="/histoire" element={<History />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Route>

@@ -7,6 +7,8 @@ const navItems = [
   { to: "/voies/gouter", label: "Voie du Goûter" },
   { to: "/voies/3-monts", label: "Voie des 3 Monts" },
   { to: "/voies/gonella", label: "Voie Italienne" },
+  { to: "/guides", label: "Guides UIAGM" },
+  { to: "/histoire", label: "Histoire" },
   { to: "/securite", label: "Sécurité" },
 ];
 
@@ -111,6 +113,8 @@ const Layout = () => {
               Information
             </h3>
             <ul className="space-y-2 text-sm">
+              <li><Link to="/guides" className="text-primary-foreground/80 hover:text-white">Annuaire des guides UIAGM</Link></li>
+              <li><Link to="/histoire" className="text-primary-foreground/80 hover:text-white">Histoire du Mont-Blanc</Link></li>
               <li><Link to="/securite" className="text-primary-foreground/80 hover:text-white">Sécurité & avertissements</Link></li>
               <li className="text-primary-foreground/60">www.ascensionmontblanc.fr</li>
             </ul>
