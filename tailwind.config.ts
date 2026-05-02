@@ -13,7 +13,25 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      },
+      backgroundImage: {
+        'gradient-summit': 'var(--gradient-summit)',
+        'gradient-glacier': 'var(--gradient-glacier)',
+        'gradient-overlay': 'var(--gradient-overlay)',
+      },
+      boxShadow: {
+        elegant: 'var(--shadow-elegant)',
+        card: 'var(--shadow-card)',
+        summit: 'var(--shadow-summit)',
+      },
       colors: {
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
