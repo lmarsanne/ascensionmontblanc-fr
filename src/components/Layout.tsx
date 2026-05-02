@@ -7,6 +7,8 @@ const navItems = [
   { to: "/voies/gouter", label: "Voie du Goûter" },
   { to: "/voies/3-monts", label: "Voie des 3 Monts" },
   { to: "/voies/gonella", label: "Voie Italienne" },
+  { to: "/guides", label: "Guides UIAGM" },
+  { to: "/histoire", label: "Histoire" },
   { to: "/securite", label: "Sécurité" },
 ];
 
