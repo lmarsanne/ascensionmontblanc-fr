@@ -4,12 +4,55 @@ import { useState } from "react";
 
 const navItems = [
   { to: "/", label: "Accueil", end: true },
-  { to: "/voies/gouter", label: "Voie du Goûter" },
-  { to: "/voies/3-monts", label: "Voie des 3 Monts" },
-  { to: "/voies/gonella", label: "Voie Italienne" },
-  { to: "/guides", label: "Guides UIAGM" },
+  { to: "/voies", label: "Voies" },
+  { to: "/guides", label: "Guides" },
+  { to: "/refuges", label: "Refuges" },
+  { to: "/preparation", label: "Préparation" },
+  { to: "/equipement", label: "Équipement" },
   { to: "/histoire", label: "Histoire" },
   { to: "/securite", label: "Sécurité" },
+  { to: "/sources", label: "Sources" },
+];
+
+const footerCols = [
+  {
+    title: "Voies",
+    links: [
+      { to: "/voies/gouter", label: "Voie normale du Goûter" },
+      { to: "/voies/3-monts", label: "Traversée des Trois Monts" },
+      { to: "/voies/gonella", label: "Voie italienne Gonella" },
+      { to: "/voies/grands-mulets", label: "Grands Mulets" },
+      { to: "/voies/miage-bionnassay", label: "Miage-Bionnassay" },
+      { to: "/voies/brenva", label: "Brenva" },
+      { to: "/voies/peuterey", label: "Peuterey" },
+    ],
+  },
+  {
+    title: "Préparer",
+    links: [
+      { to: "/preparation", label: "Préparation physique" },
+      { to: "/equipement", label: "Équipement" },
+      { to: "/securite", label: "Sécurité" },
+      { to: "/refuges", label: "Refuges" },
+    ],
+  },
+  {
+    title: "Comprendre",
+    links: [
+      { to: "/histoire", label: "Histoire" },
+      { to: "/faces", label: "Faces et versants" },
+      { to: "/glossaire", label: "Glossaire" },
+      { to: "/sources", label: "Sources" },
+    ],
+  },
+  {
+    title: "Guides",
+    links: [
+      { to: "/guides", label: "Annuaire des guides" },
+      { to: "/guides/methodologie", label: "Méthodologie de l'annuaire" },
+      { to: "/contact", label: "Signaler une correction" },
+    ],
+  },
 ];
 
 const Layout = () => {
@@ -24,7 +67,7 @@ const Layout = () => {
               <Mountain className="h-6 w-6 text-primary-foreground" strokeWidth={1.5} />
             </div>
             <div className="leading-tight">
-              <p className="font-display text-xl font-semibold text-primary">Ascension Mont-Blanc</p>
+              <p className="font-display text-xl font-semibold text-primary">Ascension Mont Blanc</p>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">4 805,59 m — UIAGM</p>
             </div>
           </Link>
@@ -36,7 +79,7 @@ const Layout = () => {
                 to={item.to}
                 end={item.end}
                 className={({ isActive }) =>
-                  `px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  `px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
                       ? "text-primary bg-accent"
                       : "text-muted-foreground hover:text-primary hover:bg-accent/60"
@@ -85,44 +128,27 @@ const Layout = () => {
       </main>
 
       <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
-        <div className="container-wide py-14 grid gap-10 md:grid-cols-3">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Mountain className="h-6 w-6" strokeWidth={1.5} />
-              <p className="font-display text-xl font-semibold">Ascension Mont-Blanc</p>
+        <div className="container-wide py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {footerCols.map((col) => (
+            <div key={col.title}>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
+                {col.title}
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {col.links.map((l) => (
+                  <li key={l.to}>
+                    <Link to={l.to} className="text-primary-foreground/80 hover:text-white">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-sm leading-relaxed text-primary-foreground/75">
-              La référence française sur l'ascension du Mont-Blanc et l'annuaire officiel
-              des Guides de Haute Montagne diplômés UIAGM.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
-              Les voies
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/voies/gouter" className="hover:text-white/100 text-primary-foreground/80">Voie du Goûter</Link></li>
-              <li><Link to="/voies/3-monts" className="hover:text-white/100 text-primary-foreground/80">Voie des 3 Monts</Link></li>
-              <li><Link to="/voies/gonella" className="hover:text-white/100 text-primary-foreground/80">Voie Italienne (Gonella)</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
-              Information
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/guides" className="text-primary-foreground/80 hover:text-white">Annuaire des guides UIAGM</Link></li>
-              <li><Link to="/histoire" className="text-primary-foreground/80 hover:text-white">Histoire du Mont-Blanc</Link></li>
-              <li><Link to="/securite" className="text-primary-foreground/80 hover:text-white">Sécurité & avertissements</Link></li>
-              <li className="text-primary-foreground/60">www.ascensionmontblanc.fr</li>
-            </ul>
-          </div>
+          ))}
         </div>
         <div className="border-t border-primary-foreground/15">
           <div className="container-wide py-5 text-xs text-primary-foreground/60 flex flex-wrap justify-between gap-2">
-            <p>© {new Date().getFullYear()} Ascension Mont-Blanc — Tous droits réservés.</p>
+            <p>© {new Date().getFullYear()} Ascension Mont Blanc — Site indépendant.</p>
             <p>Site informatif. L'alpinisme comporte des risques mortels.</p>
           </div>
         </div>
