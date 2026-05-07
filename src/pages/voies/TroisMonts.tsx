@@ -2,40 +2,51 @@ import RoutePage from "@/components/RoutePage";
 
 const TroisMonts = () => (
   <RoutePage
-    title="Voie des 3 Monts - Traversée Mont Blanc Tacul Maudit"
-    description="La voie des 3 Monts pour l'ascension du Mont-Blanc : traversée glaciaire d'altitude par le Tacul, le Maudit et le Mont-Blanc. Itinéraire, cotation et risques."
+    title="Traversée des Trois Monts — Ascension Mont Blanc"
+    description="Traversée des Trois Monts : itinéraire glaciaire depuis l'aiguille du Midi vers le sommet du Mont Blanc via le Tacul, le Maudit et le col de la Brenva."
     canonical="https://www.ascensionmontblanc.fr/voies/3-monts"
-    h1="La Voie des 3 Monts : La Traversée d'Altitude"
-    intro="Aussi appelée la « Traversée du Mont-Blanc », la voie des 3 Monts est un itinéraire glaciaire d'une beauté exceptionnelle, mais exigeant techniquement et physiquement. Elle se déroule presque intégralement au-dessus de 4 000 mètres d'altitude."
-    techSheet={[
-      { label: "Point de départ", value: "Téléphérique de l'Aiguille du Midi (3 842 m)." },
-      { label: "Dénivelé positif cumulé", value: "Environ 1 700 mètres." },
-      { label: "Cotation de difficulté", value: "PD+ à AD- selon les conditions (notamment la rimaye du Maudit)." },
-      { label: "Refuge", value: "Refuge des Cosmiques (3 613 m)." },
-      { label: "Risques majeurs", value: "Chutes de séracs (Mont Blanc du Tacul) et risque d'avalanches." },
+    h1="Ascension du Mont Blanc par la traversée des Trois Monts"
+    breadcrumbLabel="Traversée des Trois Monts"
+    intro="La traversée des Trois Monts est une voie glaciaire d'altitude qui combine esthétique alpine et engagement technique."
+    summary="La traversée des Trois Monts relie généralement l'aiguille du Midi au sommet du Mont Blanc en passant par le Mont Blanc du Tacul, le Mont Maudit et le col de la Brenva. C'est une voie glaciaire, esthétique et plus technique que la voie normale du Goûter."
+    keyPoints={[
+      "Versant : France / Chamonix",
+      "Refuge : Cosmiques",
+      "Passages clés : Mont Blanc du Tacul, Mont Maudit, col de la Brenva, mur de la Côte",
+      "Caractère : glaciaire, esthétique, technique",
+      "Public : alpinistes initiés, cordées encadrées",
     ]}
-    itineraryTitle="L'Itinéraire pas à pas"
-    itinerary={
-      <>
-        <p>
-          <strong>Jour 1 : L'acclimatation.</strong> Depuis l'Aiguille du Midi,
-          la descente de l'arête effilée mène au glacier du Géant pour rejoindre
-          rapidement le refuge des Cosmiques.
-        </p>
-        <p>
-          <strong>Jour 2 : La grande traversée.</strong> Départ vers 1h du
-          matin. L'ascension débute par la face nord du Mont Blanc du Tacul
-          (4 248 m), un secteur exposé aux chutes de blocs de glace (séracs).
-          Après l'épaule du Tacul, la cordée descend vers le col Maudit avant
-          d'attaquer les pentes raides (jusqu'à 50 degrés) du Mont Maudit. Le
-          franchissement de la rimaye du col du Mont Maudit est souvent le
-          passage clé, nécessitant un relais sur piolet ou broche à glace.
-          Enfin, depuis le col de la Brenva, l'itinéraire rejoint le Mur de la
-          Côte pour terminer par des pentes soutenues jusqu'au sommet du
-          Mont-Blanc.
-        </p>
-      </>
-    }
+    techSheet={[
+      { label: "Point de départ", value: "Aiguille du Midi (3 842 m)" },
+      { label: "Refuge", value: "Cosmiques (3 613 m)" },
+      { label: "Passages clés", value: "Mont Blanc du Tacul, Mont Maudit, col de la Brenva, mur de la Côte" },
+      { label: "Caractère", value: "Glaciaire, esthétique, technique" },
+      { label: "Public", value: "Alpinistes initiés, cordées encadrées" },
+      { label: "Cotation indicative", value: "PD+ à AD- selon conditions" },
+    ]}
+    risks={[
+      "Séracs sous le Tacul et le Maudit",
+      "Crevasses",
+      "Pentes raides selon conditions",
+      "Exposition aux changements météo",
+      "Difficulté accrue en cas de neige dure ou instable",
+    ]}
+    refuges={["Refuge des Cosmiques (3 613 m)"]}
+    bestFor="Alpinistes initiés, à l'aise sur glacier et en pente raide, encadrés par un guide."
+    avoidIf="Instabilité des séracs signalée, neige insuffisante ou trop dure, conditions météo dégradées."
+    alternatives={[
+      { label: "Voie normale du Goûter", to: "/voies/gouter" },
+      { label: "Voie italienne Gonella", to: "/voies/gonella" },
+    ]}
+    faq={[
+      { q: "Les Trois Monts sont-ils plus difficiles que le Goûter ?", a: "Oui, généralement. L'itinéraire est plus glaciaire, plus technique et plus exposé aux séracs." },
+      { q: "Pourquoi choisir cette voie ?", a: "Pour son ambiance haute montagne, son départ depuis l'aiguille du Midi et sa beauté glaciaire." },
+    ]}
+    relatedPages={[
+      { label: "Refuges", to: "/refuges" },
+      { label: "Sécurité", to: "/securite" },
+      { label: "Équipement", to: "/equipement" },
+    ]}
   />
 );
 
