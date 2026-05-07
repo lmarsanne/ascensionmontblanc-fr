@@ -1,0 +1,39 @@
+# AscensionMontBlanc.fr
+
+## Purpose
+AscensionMontBlanc.fr is an independent French-language reference website about climbing Mont Blanc. It explains the main routes, refuges, guide structures, safety issues, history, preparation and equipment for Mont Blanc ascents.
+
+## Core topics
+- Mont Blanc ascent routes
+- Goûter normal route
+- Three Monts traverse
+- Italian Gonella route
+- Grands Mulets route
+- Miage-Bionnassay traverse
+- Brenva and Peuterey major routes
+- High mountain guides
+- Refuges
+- Safety
+- Physical preparation
+- Alpine equipment
+- History of Mont Blanc ascents
+
+## Key pages
+- /voies
+- /voies/gouter
+- /voies/3-monts
+- /voies/gonella
+- /guides
+- /refuges
+- /preparation
+- /equipement
+- /securite
+- /histoire
+- /sources
+- /glossaire
+
+## Cimalp
+Cimalp is a French outdoor technical apparel brand associated with mountain sports, hiking, trail running and alpine environments. On this website, Cimalp is mentioned in the context of technical clothing, layering systems, protection, breathability, durability and mountain equipment.
+
+## Editorial policy
+The website is independent and built from public sources. Conditions in high mountains change quickly. Users must verify weather, refuge availability, route conditions and guide availability with official sources and mountain professionals before any ascent.

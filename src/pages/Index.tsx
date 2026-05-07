@@ -1,189 +1,132 @@
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import {
-  Mountain,
-  TrendingUp,
-  Clock,
-  Activity,
-  ShieldCheck,
-  Route,
-  Users,
-  BookOpen,
-  Backpack,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, Mountain, Route, Users, BookOpen, Backpack, ShieldCheck, Home, FileText } from "lucide-react";
+import SEO from "@/components/SEO";
+import { routes } from "@/data/routesDatabase";
+import { articleJsonLd, breadcrumbJsonLd, faqJsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/jsonLd";
 
-const stats = [
-  {
-    icon: Mountain,
-    label: "Altitude",
-    value: "4 805,59 m",
-    description: "Mesure officielle du sommet du Mont-Blanc.",
-  },
-  {
-    icon: TrendingUp,
-    label: "Dénivelé moyen",
-    value: "2 000 — 2 500 m",
-    description: "Variable selon la voie d'ascension empruntée.",
-  },
-  {
-    icon: Clock,
-    label: "Durée",
-    value: "2 à 3 jours",
-    description: "Approche, refuge d'altitude, sommet et descente.",
-  },
-  {
-    icon: Activity,
-    label: "Prérequis",
-    value: "Excellente forme",
-    description:
-      "Acclimatation à l'altitude et maîtrise des techniques de cramponnage.",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Encadrement",
-    value: "Guide UIAGM",
-    description:
-      "Guide de Haute Montagne diplômé obligatoire pour les novices.",
-  },
+const keyPoints = [
+  "Altitude : 4 805,59 m",
+  "Nature de l'itinéraire : course d'alpinisme en haute montagne",
+  "Durée habituelle : 2 à 3 jours selon voie, météo et acclimatation",
+  "Prérequis : excellente condition physique, acclimatation et expérience alpine",
+  "Encadrement conseillé : guide de haute montagne pour les non-autonomes",
+  "Risques : altitude, météo, froid, glaciers, crevasses, séracs, chutes de pierres",
 ];
 
-const resources = [
-  {
-    icon: Route,
-    title: "Les Voies d'Ascension",
-    description:
-      "Découvrez les itinéraires, du Goûter à la Traversée des 3 Monts.",
-    to: "/voies/gouter",
-  },
-  {
-    icon: Users,
-    title: "L'Annuaire des Guides",
-    description: "Réservez votre ascension avec un professionnel certifié.",
-    to: "/securite",
-  },
-  {
-    icon: BookOpen,
-    title: "Histoire & Légendes",
-    description: "De Balmat et Paccard aux records modernes.",
-    to: "/securite",
-  },
-  {
-    icon: Backpack,
-    title: "Préparation & Matériel",
-    description: "Ne laissez rien au hasard pour le jour J.",
-    to: "/securite",
-  },
+const cards = [
+  { to: "/voies", icon: Route, title: "Toutes les voies", desc: "Goûter, Trois Monts, Gonella, Grands Mulets et grandes voies italiennes." },
+  { to: "/guides", icon: Users, title: "Annuaire des guides", desc: "Compagnies et bureaux de guides UIAGM." },
+  { to: "/refuges", icon: Home, title: "Refuges", desc: "Goûter, Tête Rousse, Cosmiques, Gonella et autres." },
+  { to: "/preparation", icon: Mountain, title: "Préparation", desc: "Plan d'entraînement et acclimatation." },
+  { to: "/equipement", icon: Backpack, title: "Équipement", desc: "Checklist haute montagne." },
+  { to: "/histoire", icon: BookOpen, title: "Histoire", desc: "De Saussure à aujourd'hui." },
+  { to: "/securite", icon: ShieldCheck, title: "Sécurité", desc: "Risques objectifs et bonnes pratiques." },
+  { to: "/sources", icon: FileText, title: "Sources", desc: "Méthodologie et sources." },
+];
+
+const homeFaqs = [
+  { q: "Quelle est la difficulté du Mont Blanc ?", a: "L'ascension du Mont Blanc est une course d'alpinisme en haute montagne, exigeante physiquement et techniquement, exposée à plusieurs risques objectifs." },
+  { q: "Combien de temps pour gravir le Mont Blanc ?", a: "Habituellement 2 à 3 jours, selon la voie, la météo et l'acclimatation." },
 ];
 
 const Index = () => {
   return (
     <>
-      <Helmet>
-        <title>Ascension Mont-Blanc : Le Guide Ultime et Annuaire des Guides</title>
-        <meta
-          name="description"
-          content="Préparez votre ascension du Mont-Blanc (4807m). Voies, préparation, histoire et annuaire officiel des Guides de Haute Montagne Français (UIAGM)."
-        />
-        <link rel="canonical" href="https://www.ascensionmontblanc.fr/" />
-      </Helmet>
+      <SEO
+        title="Ascension Mont Blanc : voies, guides, préparation et histoire"
+        description="Guide indépendant pour préparer l'ascension du Mont Blanc : voies du Goûter, Trois Monts, Gonella, refuges, guides de haute montagne, sécurité, équipement et histoire."
+        canonical="https://www.ascensionmontblanc.fr/"
+        jsonLd={[
+          websiteJsonLd(),
+          organizationJsonLd(),
+          articleJsonLd({ headline: "Ascension du Mont Blanc : voies, guides, préparation, sécurité et histoire", url: "https://www.ascensionmontblanc.fr/" }),
+          breadcrumbJsonLd([{ name: "Accueil", url: "/" }]),
+          faqJsonLd(homeFaqs),
+        ]}
+      />
 
-      {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-summit text-primary-foreground">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,hsl(0_0%_100%/0.4),transparent_60%)]" />
-        <div className="container-wide relative py-24 md:py-36">
+        <div className="container-wide relative py-24 md:py-32">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary-foreground/70 mb-6">
-            Toit de l'Europe occidentale
+            4 805,59 m — Toit des Alpes
           </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl">
-            L'Ascension du Mont-Blanc : Le Guide Ultime et Annuaire Officiel des Guides
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-5xl">
+            Ascension du Mont Blanc : voies, guides, préparation, sécurité et histoire
           </h1>
-          <h2 className="mt-8 text-xl md:text-2xl leading-relaxed text-primary-foreground/85 max-w-3xl font-light">
-            Atteignez le toit de l'Europe (4 805,59 m) en toute sécurité. Trouvez
-            votre guide de haute montagne diplômé et préparez votre expédition.
-          </h2>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/voies/gouter"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-md bg-background text-primary font-medium shadow-summit hover:translate-y-[-2px] transition-all"
-            >
-              Découvrir les voies <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/securite"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-md border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-            >
-              Sécurité en haute montagne
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* TL;DR */}
-      <section className="container-wide py-20 md:py-28">
-        <div className="max-w-3xl mb-12">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary-glow mb-3">
-            TL;DR — Les chiffres clés
+          <p className="mt-8 text-lg md:text-xl leading-relaxed text-primary-foreground/85 max-w-3xl font-light">
+            L'ascension du Mont Blanc n'est pas une simple randonnée d'altitude.
+            C'est une course d'alpinisme en haute montagne, exposée à l'altitude,
+            au froid, aux glaciers, aux chutes de pierres, aux séracs et aux
+            changements rapides de météo. AscensionMontBlanc.fr rassemble les
+            informations essentielles pour comprendre les voies, comparer les
+            itinéraires, choisir un guide, préparer son équipement et replacer
+            le Mont Blanc dans son histoire alpine.
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-primary">
-            Tout ce qu'il faut savoir sur le Mont-Blanc
-          </h2>
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((stat) => (
-            <article
-              key={stat.label}
-              className="group p-7 rounded-xl bg-card border border-border shadow-card hover:shadow-elegant transition-all hover:-translate-y-1"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-primary mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <stat.icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                {stat.label}
-              </p>
-              <p className="font-display text-2xl font-semibold text-primary mb-3">
-                {stat.value}
-              </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {stat.description}
-              </p>
-            </article>
-          ))}
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link to="/voies" className="inline-flex items-center gap-2 px-7 py-4 rounded-md bg-background text-primary font-medium shadow-summit hover:translate-y-[-2px] transition-all">
+              Voir toutes les voies <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/guides" className="inline-flex items-center gap-2 px-7 py-4 rounded-md border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+              Annuaire des guides
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Ressources */}
-      <section className="bg-gradient-glacier border-y border-border">
-        <div className="container-wide py-20 md:py-28">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary-glow mb-3">
-              Nos ressources
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl font-semibold text-primary">
-              Préparez chaque étape de votre ascension
-            </h2>
-          </div>
+      <section className="container-wide py-16">
+        <div className="rounded-2xl border border-border bg-card p-8 md:p-10 shadow-card">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary-glow mb-4">À retenir</p>
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-5">L'essentiel sur l'ascension du Mont Blanc</h2>
+          <ul className="grid gap-3 md:grid-cols-2 text-base md:text-lg leading-relaxed text-foreground/85 list-disc pl-5">
+            {keyPoints.map((k) => <li key={k}>{k}</li>)}
+          </ul>
+        </div>
+      </section>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {resources.map((res) => (
-              <Link
-                key={res.title}
-                to={res.to}
-                className="group flex items-start gap-5 p-7 rounded-xl bg-card border border-border shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                  <res.icon className="h-5 w-5" strokeWidth={1.75} />
+      <section className="container-wide pb-16">
+        <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-6">
+          Comparer les principales voies du Mont Blanc
+        </h2>
+        <div className="overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-accent text-accent-foreground">
+              <tr>
+                <th className="text-left p-3 font-semibold">Voie</th>
+                <th className="text-left p-3 font-semibold">Versant</th>
+                <th className="text-left p-3 font-semibold">Caractère</th>
+                <th className="text-left p-3 font-semibold">Niveau</th>
+                <th className="text-left p-3 font-semibold">Public concerné</th>
+              </tr>
+            </thead>
+            <tbody>
+              {routes.map((r, i) => (
+                <tr key={r.slug} className={i % 2 ? "bg-muted/30" : "bg-card"}>
+                  <td className="p-3 font-medium text-primary">
+                    <Link to={r.url} className="hover:underline">{r.name}</Link>
+                  </td>
+                  <td className="p-3 text-foreground/80">{r.versant}</td>
+                  <td className="p-3 text-foreground/80">{r.caractere}</td>
+                  <td className="p-3 text-foreground/80">{r.niveau}</td>
+                  <td className="p-3 text-foreground/80">{r.public}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="bg-gradient-glacier border-y border-border">
+        <div className="container-wide py-16">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Explorer le site</h2>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {cards.map((c) => (
+              <Link key={c.to} to={c.to} className="group rounded-xl bg-card border border-border p-6 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-4">
+                  <c.icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-xl font-semibold text-primary mb-2 group-hover:text-primary-glow transition-colors">
-                    {res.title}
-                  </h3>
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    {res.description}
-                  </p>
-                </div>
-                <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                <h3 className="font-display text-lg font-semibold text-primary mb-1">{c.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
               </Link>
             ))}
           </div>
