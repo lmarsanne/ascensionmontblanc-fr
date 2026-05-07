@@ -2,39 +2,49 @@ import RoutePage from "@/components/RoutePage";
 
 const Gonella = () => (
   <RoutePage
-    title="La Voie Italienne (Gonella) - Ascension Mont Blanc côté Sud"
-    description="La voie italienne du Mont-Blanc par le refuge Gonella : itinéraire normal côté sud, sauvage et engagé. Fiche technique, dénivelé et conditions glaciaires."
+    title="Voie italienne Gonella — Ascension Mont Blanc"
+    description="Voie italienne du Mont Blanc par le refuge Gonella et les Aiguilles Grises : itinéraire long, sauvage et engagé depuis le Val Veny."
     canonical="https://www.ascensionmontblanc.fr/voies/gonella"
-    h1="La Voie Italienne : L'Ascension Sauvage par le Refuge Gonella"
-    intro="C'est l'itinéraire normal côté italien. Beaucoup plus long et sauvage que les voies françaises, il offre une expérience de haute solitude et des paysages grandioses sur le versant sud du massif. En raison du réchauffement climatique, cette voie doit être entreprise tôt dans la saison (juin/juillet)."
-    techSheet={[
-      { label: "Point de départ", value: "Val Veny, La Visaille (1 650 m)." },
-      { label: "Dénivelé positif", value: "3 150 mètres au total (1 400 m J1, 1 750 m J2)." },
-      { label: "Cotation de difficulté", value: "PD+." },
-      { label: "Refuge", value: "Refuge Francesco Gonella (3 071 m)." },
-      { label: "Caractéristique", value: "Retrait glaciaire important rendant le glacier du Dôme très crevassé en fin d'été." },
+    h1="Ascension du Mont Blanc par Gonella et les Aiguilles Grises"
+    breadcrumbLabel="Voie Gonella"
+    intro="La voie italienne par Gonella et les Aiguilles Grises est l'itinéraire normal côté italien : long, sauvage et beaucoup moins fréquenté que les voies françaises."
+    summary="La voie italienne par Gonella et les Aiguilles Grises est une ascension longue, sauvage et moins fréquentée du Mont Blanc. Elle part du Val Veny, rejoint le refuge Gonella, puis progresse vers le glacier du Dôme, le col des Aiguilles Grises, le col de Bionnassay et l'arête des Bosses."
+    keyPoints={[
+      "Versant : Italie / Val Veny / Courmayeur",
+      "Refuge : Gonella",
+      "Passages clés : glacier de Miage, glacier du Dôme, cols des Aiguilles Grises et de Bionnassay, arête des Bosses",
+      "Caractère : long, sauvage, moins fréquenté",
+      "Public : alpinistes endurants et acclimatés",
     ]}
-    itineraryTitle="L'Itinéraire pas à pas"
-    itinerary={
-      <>
-        <p>
-          <strong>Jour 1 : L'interminable moraine.</strong> L'approche est
-          longue. Depuis le Val Veny, le cheminement remonte le glacier de
-          Miage, recouvert de cailloux (moraine). La montée finale vers le
-          refuge Gonella, rénové et accroché à la paroi, s'effectue par un
-          sentier escarpé équipé de chaînes et d'échelles.
-        </p>
-        <p>
-          <strong>Jour 2 : Le versant sud.</strong> Le départ de nuit se fait
-          sur le glacier du Dôme, souvent tortueux et complexe à naviguer à
-          cause de ses énormes crevasses. L'objectif est d'atteindre le col des
-          Aiguilles Grises, puis le col de Bionnassay (3 888 m). La cordée
-          rejoint alors l'arête de Bionnassay jusqu'au Dôme du Goûter, où la
-          voie italienne fusionne avec la voie normale française pour affronter
-          l'arête des Bosses jusqu'au sommet.
-        </p>
-      </>
-    }
+    techSheet={[
+      { label: "Versant", value: "Italien" },
+      { label: "Point de départ", value: "Val Veny / Courmayeur" },
+      { label: "Refuge", value: "Gonella (3 071 m)" },
+      { label: "Passages clés", value: "Glacier de Miage, refuge Gonella, glacier du Dôme, col des Aiguilles Grises, col de Bionnassay, arête des Bosses" },
+      { label: "Caractère", value: "Long, sauvage, moins fréquenté" },
+      { label: "Public", value: "Alpinistes endurants et acclimatés" },
+    ]}
+    risks={[
+      "Longueur de la course",
+      "Glacier du Dôme très crevassé en fin de saison",
+      "Orientation parfois délicate",
+      "Météo et altitude",
+    ]}
+    refuges={["Refuge Francesco Gonella (3 071 m)"]}
+    bestFor="Alpinistes endurants, autonomes, recherchant une ambiance sauvage sur le versant italien."
+    avoidIf="Conditions glaciaires dégradées en fin d'été, manque d'expérience sur glacier complexe."
+    alternatives={[
+      { label: "Voie normale du Goûter", to: "/voies/gouter" },
+      { label: "Traversée des Trois Monts", to: "/voies/3-monts" },
+    ]}
+    faq={[
+      { q: "La voie Gonella est-elle plus sauvage que le Goûter ?", a: "Oui. Elle est généralement moins fréquentée et offre une ambiance plus sauvage côté italien." },
+      { q: "Est-ce une voie pour débutant ?", a: "Non. Sa longueur, son isolement relatif et son caractère glaciaire demandent une vraie préparation." },
+    ]}
+    relatedPages={[
+      { label: "Refuges", to: "/refuges" },
+      { label: "Préparation", to: "/preparation" },
+    ]}
   />
 );
 
