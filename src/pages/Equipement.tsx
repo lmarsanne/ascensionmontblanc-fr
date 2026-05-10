@@ -1,4 +1,6 @@
 import SEO from "@/components/SEO";
+import ExternalResources from "@/components/ExternalResources";
+import { externalResources } from "@/data/externalResources";
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonLd";
 import {
   Accordion,
@@ -132,6 +134,11 @@ const Equipement = () => {
           ))}
         </Accordion>
       </section>
+      <ExternalResources
+        resources={externalResources}
+        title="Marques et ressources équipement"
+        categoryFilter={["Équipement"]}
+      />
     </>
   );
 };

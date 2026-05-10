@@ -41,6 +41,21 @@ import ChecklistBlog from "./pages/blog/ChecklistEquipement";
 import SePreparerBlog from "./pages/blog/SePreparer";
 import CramponsBlog from "./pages/blog/Crampons";
 import PantalonsBlog from "./pages/blog/Pantalons";
+import PreparerLeMontBlanc from "./pages/PreparerLeMontBlanc";
+import SuisJePret from "./pages/SuisJePret";
+import ErreursFrequentes from "./pages/ErreursFrequentes";
+import Saisons from "./pages/Saisons";
+import Meteo from "./pages/Meteo";
+import Altitude from "./pages/Altitude";
+import Acces from "./pages/Acces";
+import Secours from "./pages/Secours";
+import GouterVs3Monts from "./pages/GouterVs3Monts";
+import GouterVsGonella from "./pages/GouterVsGonella";
+import AvecOuSansGuide from "./pages/AvecOuSansGuide";
+import RefugeGouterVsTeteRousse from "./pages/RefugeGouterVsTeteRousse";
+import QuelSac from "./pages/QuelSac";
+import QuelPantalon from "./pages/QuelPantalon";
+import QuelleVeste from "./pages/QuelleVeste";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -90,6 +105,21 @@ const App = () => (
               <Route path="/blog/se-preparer-a-lascension-du-mont-blanc" element={<SePreparerBlog />} />
               <Route path="/blog/crampons-piolets-et-cordes" element={<CramponsBlog />} />
               <Route path="/blog/les-meilleurs-pantalons-dalpinisme" element={<PantalonsBlog />} />
+              <Route path="/preparer-le-mont-blanc" element={<PreparerLeMontBlanc />} />
+              <Route path="/suis-je-pret-pour-le-mont-blanc" element={<SuisJePret />} />
+              <Route path="/erreurs-frequentes-mont-blanc" element={<ErreursFrequentes />} />
+              <Route path="/saisons-ascension-mont-blanc" element={<Saisons />} />
+              <Route path="/meteo-mont-blanc" element={<Meteo />} />
+              <Route path="/altitude-mont-blanc" element={<Altitude />} />
+              <Route path="/acces-mont-blanc" element={<Acces />} />
+              <Route path="/secours-assurance-mont-blanc" element={<Secours />} />
+              <Route path="/gouter-vs-3-monts" element={<GouterVs3Monts />} />
+              <Route path="/gouter-vs-gonella" element={<GouterVsGonella />} />
+              <Route path="/avec-ou-sans-guide" element={<AvecOuSansGuide />} />
+              <Route path="/refuge-gouter-vs-tete-rousse" element={<RefugeGouterVsTeteRousse />} />
+              <Route path="/quel-sac-pour-le-mont-blanc" element={<QuelSac />} />
+              <Route path="/quel-pantalon-pour-le-mont-blanc" element={<QuelPantalon />} />
+              <Route path="/quelle-veste-pour-le-mont-blanc" element={<QuelleVeste />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
