@@ -1,4 +1,6 @@
 import SEO from "@/components/SEO";
+import ExternalResources from "@/components/ExternalResources";
+import { externalResources } from "@/data/externalResources";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonLd";
 
 const sections = [
@@ -48,6 +50,11 @@ const Sources = () => {
           </div>
         ))}
       </section>
+      <ExternalResources
+        resources={externalResources}
+        title="Toutes les ressources externes référencées"
+        intro="Liste complète des ressources institutionnelles, refuges, guides, équipement et météo utilisées et citées sur AscensionMontBlanc.fr."
+      />
     </>
   );
 };

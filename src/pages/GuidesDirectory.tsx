@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, ShieldCheck, ArrowRight, Search } from "lucide-react";
 import SEO from "@/components/SEO";
+import ExternalResources from "@/components/ExternalResources";
+import { externalResources } from "@/data/externalResources";
 import { guideEntities } from "@/data/guidesDatabase";
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd, itemListJsonLd } from "@/lib/jsonLd";
 import { Input } from "@/components/ui/input";
@@ -135,6 +137,12 @@ const GuidesDirectory = () => {
           </p>
         </div>
       </section>
+
+      <ExternalResources
+        resources={externalResources}
+        title="Institutions et compagnies de référence"
+        categoryFilter={["Institutions", "Guides & compagnies"]}
+      />
     </>
   );
 };

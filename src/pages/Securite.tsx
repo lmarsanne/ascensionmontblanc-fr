@@ -1,4 +1,6 @@
 import SEO from "@/components/SEO";
+import ExternalResources from "@/components/ExternalResources";
+import { externalResources } from "@/data/externalResources";
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonLd";
 import { AlertTriangle } from "lucide-react";
 
@@ -73,6 +75,11 @@ const Securite = () => {
           </div>
         ))}
       </section>
+      <ExternalResources
+        resources={externalResources}
+        title="Ressources sécurité et secours"
+        categoryFilter={["Sécurité & prévention", "Secours", "Météo & conditions"]}
+      />
     </>
   );
 };

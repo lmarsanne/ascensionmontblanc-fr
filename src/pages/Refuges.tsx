@@ -1,4 +1,6 @@
 import SEO from "@/components/SEO";
+import ExternalResources from "@/components/ExternalResources";
+import { externalResources } from "@/data/externalResources";
 import { Link } from "react-router-dom";
 import { refuges } from "@/data/refugesDatabase";
 import { articleJsonLd, breadcrumbJsonLd, itemListJsonLd } from "@/lib/jsonLd";
@@ -52,6 +54,11 @@ const Refuges = () => {
           ))}
         </div>
       </section>
+      <ExternalResources
+        resources={externalResources}
+        title="Réservations et informations refuges"
+        categoryFilter={["Refuges"]}
+      />
     </>
   );
 };
